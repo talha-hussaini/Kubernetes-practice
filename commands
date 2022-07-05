@@ -1,0 +1,31 @@
+kubectl run <imagename> # deploy app/container on cluster
+
+kubectl cluster-info            # cluster info
+
+kubectl get nodes                # list all nodes
+
+kubectl get pods                # list of pods
+
+# to get more info about pod
+kubectl describe pod <podname>
+        OR
+kubectl get pods -o wide
+
+# command to create pod
+
+1 - kubectl create -f <filename>  # when you have file 
+2 - kubectl run <podname> --image=<imagename> # without file
+3 - kubectl run <podname> --image=<imagename> --dry-run=client -o yaml <filename> # without file but redirecting it to file
+
+kubectl get replicationcontroller
+kubectl get replicaset
+kubectl get pods
+
+#### how to scale??
+
+1 - change the replicas in file and run the below command
+
+        kubectl replace -f <filename>
+
+2 - kubectl scale --replicas=<number> -f <filename>  # command to scale without having to go in file.
+

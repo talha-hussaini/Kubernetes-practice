@@ -1,0 +1,20 @@
+apiVersion: v1                            # version
+kind: ReplicationController               # which kind
+metadata:                                 # data about RC
+  name: myapp-rc                          # name of RC
+  labels:
+    app: myapp                            # assigning labels to RC
+    type: fromt-end
+
+spec:                                     # spec for RC (what we want in our object)
+  template:
+    metadata:                             # data about PODS
+      name: myapp-pod                     # pod name
+      labels:                             # assigning labels to that POD
+        app: myapp
+        type: front-end
+    spec:                                 # spec for that POD
+      containers:
+        - name: nginx-container           # container name
+          image: nginx                    # image name
+  replicas: 3                             # how many replicas you want

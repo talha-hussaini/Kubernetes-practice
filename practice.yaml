@@ -1,0 +1,55 @@
+# key-value pair
+
+app: app-name
+port: 8080
+version: 1.5
+
+# key-value pair in objects
+
+microservices:
+  app: app-name
+  port: port-number
+  version: 1.9
+   
+# lists in yaml
+
+microservicess:
+  - app: app-name
+    port : 9090
+    version: 1.9
+
+# booleans in yaml
+
+microservicesss:
+   - app: app-name
+     port: port-number
+     deployed: True
+
+# list examples
+
+microservice: 
+  - app: app-name
+    port: port-number
+    version: 1.9
+  - app2: app-name
+    port: port-number
+    version: 2.0
+
+# list in list
+
+examples: 
+  - app: app-name
+    port: port-number
+    version: 1.7
+  - app: app-name
+    port: port-number
+    version:
+      - 1.7
+      - 1.9
+      - 2.5
+
+
+
+
+
+

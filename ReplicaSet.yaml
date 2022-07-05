@@ -1,0 +1,22 @@
+apiVersion: apps/v1                       # version
+kind: ReplicaSet                          # which kind
+metadata:                                 # data about RC
+  name: myapp-rc                          # name of RC
+  labels:
+    app: myapp                            # assigning labels to RC
+
+spec:                                     # spec for RC (what we want in our object)
+  template:
+    metadata:                             # data about PODS
+      name: myapp-pod                     # pod name
+      labels:                             # assigning labels to that POD
+        app: myapp
+    spec:                                 # spec for that POD
+      containers:
+        - name: nginx-container           # container name
+          image: nginx                    # image name
+  replicas: 3                             # how many replicas you want
+  selector:
+    matchLabels:
+      app: myapp                          # the label in matchlabels section should match label in pod section
+

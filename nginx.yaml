@@ -1,0 +1,15 @@
+apiVersion: v1                      # for POD
+kind: Pod                           # specifying the kind
+metadata:                           # detail about pods
+  name: nginx                       # POD name  
+  labels:                           
+    env: production                 # assigning label to that POD
+spec:
+  containers:
+    - name: nginx                   # container name
+      image: nginx                  # container image name
+    - name: busybox
+      image: busybox
+
+
+
